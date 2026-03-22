@@ -110,7 +110,7 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: vignesh8386/auth-service:latest
+        image: vignesh8386/authentication-service:latest
         ports:
         - containerPort: 3002
         env:
