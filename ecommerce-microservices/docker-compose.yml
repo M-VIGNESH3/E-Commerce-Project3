@@ -3,7 +3,7 @@
 services:
   mongodb:
     image: mongo:6.0
-    container_name: Clahan Store-mongo
+    container_name: clahanstore-mongo
     ports:
       - "27017:27017"
     volumes:
@@ -13,7 +13,7 @@ services:
 
   user-service:
     build: ./user-service
-    container_name: Clahan Store-user
+    container_name: clahanstore-user
     ports:
       - "3001:3001"
     environment:
@@ -26,7 +26,7 @@ services:
 
   authentication-service:
     build: ./authentication-service
-    container_name: Clahan Store-auth
+    container_name: clahanstore-auth
     ports:
       - "3002:3002"
     environment:
@@ -40,7 +40,7 @@ services:
 
   product-service:
     build: ./product-service
-    container_name: Clahan Store-product
+    container_name: clahanstore-product
     ports:
       - "3003:3003"
     environment:
@@ -53,7 +53,7 @@ services:
 
   search-service:
     build: ./search-service
-    container_name: Clahan Store-search
+    container_name: clahanstore-search
     ports:
       - "3004:3004"
     environment:
@@ -68,7 +68,7 @@ services:
 
   inventory-service:
     build: ./inventory-service
-    container_name: Clahan Store-inventory
+    container_name: clahanstore-inventory
     ports:
       - "3005:3005"
     environment:
@@ -81,7 +81,7 @@ services:
 
   cart-service:
     build: ./cart-service
-    container_name: Clahan Store-cart
+    container_name: clahanstore-cart
     ports:
       - "3006:3006"
     environment:
@@ -98,7 +98,7 @@ services:
 
   wishlist-service:
     build: ./wishlist-service
-    container_name: Clahan Store-wishlist
+    container_name: clahanstore-wishlist
     ports:
       - "3007:3007"
     environment:
@@ -113,7 +113,7 @@ services:
 
   order-service:
     build: ./order-service
-    container_name: Clahan Store-order
+    container_name: clahanstore-order
     ports:
       - "3008:3008"
     environment:
@@ -126,7 +126,7 @@ services:
 
   payment-service:
     build: ./payment-service
-    container_name: Clahan Store-payment
+    container_name: clahanstore-payment
     ports:
       - "3009:3009"
     environment:
@@ -141,7 +141,7 @@ services:
 
   invoice-service:
     build: ./invoice-service
-    container_name: Clahan Store-invoice
+    container_name: clahanstore-invoice
     ports:
       - "3010:3010"
     environment:
@@ -158,7 +158,7 @@ services:
 
   shipping-service:
     build: ./shipping-service
-    container_name: Clahan Store-shipping
+    container_name: clahanstore-shipping
     ports:
       - "3011:3011"
     environment:
@@ -173,7 +173,7 @@ services:
 
   review-rating-service:
     build: ./review-rating-service
-    container_name: Clahan Store-review
+    container_name: clahanstore-review
     ports:
       - "3012:3012"
     environment:
@@ -188,7 +188,7 @@ services:
 
   recommendation-service:
     build: ./recommendation-service
-    container_name: Clahan Store-recommendation
+    container_name: clahanstore-recommendation
     ports:
       - "3013:3013"
     environment:
@@ -205,7 +205,7 @@ services:
 
   admin-service:
     build: ./admin-service
-    container_name: Clahan Store-admin
+    container_name: clahanstore-admin
     ports:
       - "3014:3014"
     environment:
@@ -223,7 +223,7 @@ services:
 
   api-gateway:
     build: ./api-gateway
-    container_name: Clahan Store-gateway
+    container_name: clahanstore-gateway
     ports:
       - "3000:3000"
     environment:
@@ -262,7 +262,7 @@ services:
 
   frontend-ui:
     build: ./frontend-ui
-    container_name: Clahan Store-frontend
+    container_name: clahanstore-frontend
     ports:
       - "80:80"
     depends_on:

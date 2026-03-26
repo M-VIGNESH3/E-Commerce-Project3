@@ -58,7 +58,7 @@ To deploy the cluster to a local or cloud-native Kubernetes environment (e.g. Mi
 
 ```bash
 cd ecommerce-microservices
-kubectl apply -f kubernetes/configmaps/Clahan Store-config.yaml
+kubectl apply -f kubernetes/configmaps/clahanstore-config.yaml
 kubectl apply -f kubernetes/deployments/all-deployments.yaml
 kubectl apply -f kubernetes/services/all-services.yaml
 ```
