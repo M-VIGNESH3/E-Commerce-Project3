@@ -1,19 +1,19 @@
-version: '3.8'
+﻿version: '3.8'
 
 services:
   mongodb:
     image: mongo:6.0
-    container_name: shopverse-mongo
+    container_name: Clahan Store-mongo
     ports:
       - "27017:27017"
     volumes:
       - mongodata:/data/db
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   user-service:
     build: ./user-service
-    container_name: shopverse-user
+    container_name: Clahan Store-user
     ports:
       - "3001:3001"
     environment:
@@ -22,11 +22,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   authentication-service:
     build: ./authentication-service
-    container_name: shopverse-auth
+    container_name: Clahan Store-auth
     ports:
       - "3002:3002"
     environment:
@@ -36,11 +36,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   product-service:
     build: ./product-service
-    container_name: shopverse-product
+    container_name: Clahan Store-product
     ports:
       - "3003:3003"
     environment:
@@ -49,11 +49,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   search-service:
     build: ./search-service
-    container_name: shopverse-search
+    container_name: Clahan Store-search
     ports:
       - "3004:3004"
     environment:
@@ -64,11 +64,11 @@ services:
       - mongodb
       - product-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   inventory-service:
     build: ./inventory-service
-    container_name: shopverse-inventory
+    container_name: Clahan Store-inventory
     ports:
       - "3005:3005"
     environment:
@@ -77,11 +77,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   cart-service:
     build: ./cart-service
-    container_name: shopverse-cart
+    container_name: Clahan Store-cart
     ports:
       - "3006:3006"
     environment:
@@ -94,11 +94,11 @@ services:
       - product-service
       - inventory-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   wishlist-service:
     build: ./wishlist-service
-    container_name: shopverse-wishlist
+    container_name: Clahan Store-wishlist
     ports:
       - "3007:3007"
     environment:
@@ -109,11 +109,11 @@ services:
       - mongodb
       - product-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   order-service:
     build: ./order-service
-    container_name: shopverse-order
+    container_name: Clahan Store-order
     ports:
       - "3008:3008"
     environment:
@@ -122,11 +122,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   payment-service:
     build: ./payment-service
-    container_name: shopverse-payment
+    container_name: Clahan Store-payment
     ports:
       - "3009:3009"
     environment:
@@ -137,11 +137,11 @@ services:
       - mongodb
       - order-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   invoice-service:
     build: ./invoice-service
-    container_name: shopverse-invoice
+    container_name: Clahan Store-invoice
     ports:
       - "3010:3010"
     environment:
@@ -154,11 +154,11 @@ services:
       - order-service
       - payment-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   shipping-service:
     build: ./shipping-service
-    container_name: shopverse-shipping
+    container_name: Clahan Store-shipping
     ports:
       - "3011:3011"
     environment:
@@ -169,11 +169,11 @@ services:
       - mongodb
       - order-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   review-rating-service:
     build: ./review-rating-service
-    container_name: shopverse-review
+    container_name: Clahan Store-review
     ports:
       - "3012:3012"
     environment:
@@ -184,11 +184,11 @@ services:
       - mongodb
       - product-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   recommendation-service:
     build: ./recommendation-service
-    container_name: shopverse-recommendation
+    container_name: Clahan Store-recommendation
     ports:
       - "3013:3013"
     environment:
@@ -201,11 +201,11 @@ services:
       - mongodb
       - product-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   admin-service:
     build: ./admin-service
-    container_name: shopverse-admin
+    container_name: Clahan Store-admin
     ports:
       - "3014:3014"
     environment:
@@ -219,11 +219,11 @@ services:
     depends_on:
       - mongodb
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   api-gateway:
     build: ./api-gateway
-    container_name: shopverse-gateway
+    container_name: Clahan Store-gateway
     ports:
       - "3000:3000"
     environment:
@@ -258,20 +258,20 @@ services:
       - recommendation-service
       - admin-service
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
   frontend-ui:
     build: ./frontend-ui
-    container_name: shopverse-frontend
+    container_name: Clahan Store-frontend
     ports:
       - "80:80"
     depends_on:
       - api-gateway
     networks:
-      - shopverse-net
+      - Clahan Store-net
 
 networks:
-  shopverse-net:
+  Clahan Store-net:
     driver: bridge
 
 volumes:

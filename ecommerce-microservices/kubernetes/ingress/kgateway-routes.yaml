@@ -1,8 +1,8 @@
-apiVersion: gateway.networking.k8s.io/v1
+﻿apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: ecommerce-gateway
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   gatewayClassName: kgateway
   listeners:
@@ -17,7 +17,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: frontend-route
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   parentRefs:
   - name: ecommerce-gateway

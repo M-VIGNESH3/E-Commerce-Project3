@@ -1,13 +1,13 @@
-apiVersion: v1
+﻿apiVersion: v1
 kind: Namespace
 metadata:
-  name: shopverse
+  name: Clahan Store
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -35,7 +35,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-gateway
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 2
   selector:
@@ -53,7 +53,7 @@ spec:
         - containerPort: 3000
         envFrom:
         - configMapRef:
-            name: shopverse-config
+            name: Clahan Store-config
         resources:
           requests:
             cpu: 10m
@@ -66,7 +66,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -88,7 +88,7 @@ spec:
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_USER
         resources:
           requests:
@@ -102,7 +102,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 2
   selector:
@@ -126,7 +126,7 @@ spec:
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_AUTH
         resources:
           requests:
@@ -140,7 +140,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: product-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 2
   selector:
@@ -162,7 +162,7 @@ spec:
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_PRODUCT
         resources:
           requests:
@@ -176,7 +176,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: search-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -198,12 +198,12 @@ spec:
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_SEARCH
         resources:
           requests:
@@ -217,7 +217,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: inventory-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -239,7 +239,7 @@ spec:
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_INVENTORY
         resources:
           requests:
@@ -253,7 +253,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cart-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -275,17 +275,17 @@ spec:
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: INVENTORY_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: INVENTORY_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_CART
         resources:
           requests:
@@ -299,7 +299,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wishlist-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -321,12 +321,12 @@ spec:
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_WISHLIST
         resources:
           requests:
@@ -340,7 +340,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: order-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -362,7 +362,7 @@ spec:
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_ORDER
         resources:
           requests:
@@ -376,7 +376,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -398,12 +398,12 @@ spec:
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: ORDER_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_PAYMENT
         resources:
           requests:
@@ -417,7 +417,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: invoice-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -439,17 +439,17 @@ spec:
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: ORDER_SERVICE_URL
         - name: PAYMENT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PAYMENT_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_INVOICE
         resources:
           requests:
@@ -463,7 +463,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shipping-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -485,12 +485,12 @@ spec:
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: ORDER_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_SHIPPING
         resources:
           requests:
@@ -504,7 +504,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: review-rating-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -526,12 +526,12 @@ spec:
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_REVIEW
         resources:
           requests:
@@ -545,7 +545,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendation-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -567,22 +567,22 @@ spec:
         - name: USER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: USER_SERVICE_URL
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: ORDER_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_RECOMMENDATION
         resources:
           requests:
@@ -596,7 +596,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-service
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 1
   selector:
@@ -618,32 +618,32 @@ spec:
         - name: USER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: USER_SERVICE_URL
         - name: PRODUCT_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: PRODUCT_SERVICE_URL
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: ORDER_SERVICE_URL
         - name: INVENTORY_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: INVENTORY_SERVICE_URL
         - name: SHIPPING_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: SHIPPING_SERVICE_URL
         - name: MONGO_URI
           valueFrom:
             configMapKeyRef:
-              name: shopverse-config
+              name: Clahan Store-config
               key: MONGO_URI_ADMIN
         resources:
           requests:
@@ -657,7 +657,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-ui
-  namespace: shopverse
+  namespace: Clahan Store
 spec:
   replicas: 2
   selector:

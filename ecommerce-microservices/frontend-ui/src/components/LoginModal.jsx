@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { FiX, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { toast } from 'react-hot-toast';
@@ -47,7 +47,7 @@ export default function LoginModal() {
           {isLogin ? 'Welcome Back' : 'Create Account'}
         </h2>
         <p className="text-gray-400 text-center mb-8">
-          {isLogin ? 'Sign in to access your cart and orders' : 'Join ShopVerse for exclusive benefits'}
+          {isLogin ? 'Sign in to access your cart and orders' : 'Join Clahan Store for exclusive benefits'}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5 relative z-10">

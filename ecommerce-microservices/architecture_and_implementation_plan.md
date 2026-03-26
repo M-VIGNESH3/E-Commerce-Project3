@@ -1,7 +1,7 @@
-# ShopVerse Architecture & Implementation Plan
+﻿# Clahan Store Architecture & Implementation Plan
 
 ## 1. Architecture Overview
-ShopVerse is a premium e-commerce platform built on a robust, cloud-native **Microservices Architecture**. It is designed to be highly scalable and maintainable, consisting of 15 completely independent backend services, a modern React frontend UI, a centralized API Gateway, and a scalable MongoDB database cluster.
+Clahan Store is a premium e-commerce platform built on a robust, cloud-native **Microservices Architecture**. It is designed to be highly scalable and maintainable, consisting of 15 completely independent backend services, a modern React frontend UI, a centralized API Gateway, and a scalable MongoDB database cluster.
 
 ### Key Architectural Principles
 - **API Gateway Pattern**: All client requests are routed through a central API Gateway (`api-gateway`) which hands token validation and forwards requests to the appropriate downstream service.
@@ -95,7 +95,7 @@ graph TD
 
 ### Phase 2: Staging Kubernetes Deployment
 - **Initial Rollout**: The platform should use the built-in `kubernetes/deployments` directory to map the current architecture to Kubernetes constructs (Deployments, Services, ConfigMaps).
-- **Environment Targeting**: Place all pods and internal Services inside the `shopverse` namespace to prevent pollution of the default environment context.
+- **Environment Targeting**: Place all pods and internal Services inside the `Clahan Store` namespace to prevent pollution of the default environment context.
 - **External Exposure**: Use basic `NodePort` mapping initially to test cluster routing over the `api-gateway` pod logic.
 
 ### Phase 3: High Availability & Scalability Enhancements

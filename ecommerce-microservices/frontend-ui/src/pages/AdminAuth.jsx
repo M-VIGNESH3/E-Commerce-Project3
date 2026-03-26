@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FiMail, FiLock, FiUser, FiBriefcase } from 'react-icons/fi';
@@ -60,7 +60,7 @@ export default function AdminAuth() {
           {isLogin ? 'Seller Portal Login' : 'Register as Seller'}
         </h2>
         <p className="text-gray-400 text-center mb-10">
-          {isLogin ? 'Sign in to manage your products and orders' : 'Join ShopVerse as a merchant and start selling'}
+          {isLogin ? 'Sign in to manage your products and orders' : 'Join Clahan Store as a merchant and start selling'}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -103,7 +103,7 @@ export default function AdminAuth() {
         </form>
 
         <div className="mt-8 text-center text-sm text-gray-400 z-10 relative">
-          {isLogin ? "Want to sell on ShopVerse? " : "Already a seller? "}
+          {isLogin ? "Want to sell on Clahan Store? " : "Already a seller? "}
           <button 
             type="button"
             onClick={() => setIsLogin(!isLogin)}

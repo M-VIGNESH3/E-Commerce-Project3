@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -52,7 +52,7 @@ function App() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                   <div className="col-span-1 md:col-span-2">
                     <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500 mb-4 block">
-                      ShopVerse
+                      Clahan Store
                     </span>
                     <p className="text-gray-400 max-w-sm mt-4">
                       The premium destination for the finest products. Cloud-native microservices architecture powering a seamless shopping experience.
@@ -76,7 +76,7 @@ function App() {
                   </div>
                 </div>
                 <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
-                  &copy; 2024 ShopVerse Platform. All rights reserved.
+                  &copy; 2024 Clahan Store Platform. All rights reserved.
                 </div>
               </div>
             </footer>
