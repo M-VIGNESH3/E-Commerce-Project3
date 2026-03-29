@@ -31,7 +31,7 @@ Write-Host "Make sure you are logged into Docker Hub (run 'docker login' if you 
 Start-Sleep -Seconds 2
 
 foreach ($service in $microservices) {
-    $imageName = "$DOCKER_USERNAME/ecommerce:v1.0.0-$service"
+    $imageName = "$DOCKER_USERNAME/ecommerce-$service:v1.0.0"
     $servicePath = Join-Path $PWD $service
     
     if (Test-Path $servicePath) {

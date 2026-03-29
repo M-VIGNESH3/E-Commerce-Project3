@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: team4devops/ecommerce:v1.0.0-api-gateway
+        image: team4devops/ecommerce-api-gateway:v1.0.0
         ports:
         - containerPort: 3000
         envFrom:
@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: team4devops/ecommerce:v1.0.0-user-service
+        image: team4devops/ecommerce-user-service:v1.0.0
         ports:
         - containerPort: 3001
         env:
@@ -88,7 +88,7 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: team4devops/ecommerce:v1.0.0-authentication-service
+        image: team4devops/ecommerce-authentication-service:v1.0.0
         ports:
         - containerPort: 3002
         env:
@@ -129,7 +129,7 @@ spec:
     spec:
       containers:
       - name: product-service
-        image: team4devops/ecommerce:v1.0.0-product-service
+        image: team4devops/ecommerce-product-service:v1.0.0
         ports:
         - containerPort: 3003
         env:
@@ -165,7 +165,7 @@ spec:
     spec:
       containers:
       - name: search-service
-        image: team4devops/ecommerce:v1.0.0-search-service
+        image: team4devops/ecommerce-search-service:v1.0.0
         ports:
         - containerPort: 3004
         env:
@@ -206,7 +206,7 @@ spec:
     spec:
       containers:
       - name: inventory-service
-        image: team4devops/ecommerce:v1.0.0-inventory-service
+        image: team4devops/ecommerce-inventory-service:v1.0.0
         ports:
         - containerPort: 3005
         env:
@@ -242,7 +242,7 @@ spec:
     spec:
       containers:
       - name: cart-service
-        image: team4devops/ecommerce:v1.0.0-cart-service
+        image: team4devops/ecommerce-cart-service:v1.0.0
         ports:
         - containerPort: 3006
         env:
@@ -288,7 +288,7 @@ spec:
     spec:
       containers:
       - name: wishlist-service
-        image: team4devops/ecommerce:v1.0.0-wishlist-service
+        image: team4devops/ecommerce-wishlist-service:v1.0.0
         ports:
         - containerPort: 3007
         env:
@@ -329,7 +329,7 @@ spec:
     spec:
       containers:
       - name: order-service
-        image: team4devops/ecommerce:v1.0.0-order-service
+        image: team4devops/ecommerce-order-service:v1.0.0
         ports:
         - containerPort: 3008
         env:
@@ -365,7 +365,7 @@ spec:
     spec:
       containers:
       - name: payment-service
-        image: team4devops/ecommerce:v1.0.0-payment-service
+        image: team4devops/ecommerce-payment-service:v1.0.0
         ports:
         - containerPort: 3009
         env:
@@ -406,7 +406,7 @@ spec:
     spec:
       containers:
       - name: invoice-service
-        image: team4devops/ecommerce:v1.0.0-invoice-service
+        image: team4devops/ecommerce-invoice-service:v1.0.0
         ports:
         - containerPort: 3010
         env:
@@ -452,7 +452,7 @@ spec:
     spec:
       containers:
       - name: shipping-service
-        image: team4devops/ecommerce:v1.0.0-shipping-service
+        image: team4devops/ecommerce-shipping-service:v1.0.0
         ports:
         - containerPort: 3011
         env:
@@ -493,7 +493,7 @@ spec:
     spec:
       containers:
       - name: review-rating-service
-        image: team4devops/ecommerce:v1.0.0-review-rating-service
+        image: team4devops/ecommerce-review-rating-service:v1.0.0
         ports:
         - containerPort: 3012
         env:
@@ -534,7 +534,7 @@ spec:
     spec:
       containers:
       - name: recommendation-service
-        image: team4devops/ecommerce:v1.0.0-recommendation-service
+        image: team4devops/ecommerce-recommendation-service:v1.0.0
         ports:
         - containerPort: 3013
         env:
@@ -585,7 +585,7 @@ spec:
     spec:
       containers:
       - name: admin-service
-        image: team4devops/ecommerce:v1.0.0-admin-service
+        image: team4devops/ecommerce-admin-service:v1.0.0
         ports:
         - containerPort: 3014
         env:
@@ -646,7 +646,7 @@ spec:
     spec:
       containers:
       - name: frontend-ui
-        image: team4devops/ecommerce:v1.0.0-frontend-ui
+        image: team4devops/ecommerce-frontend-ui:v1.0.0
         ports:
         - containerPort: 80
         resources:
@@ -656,4 +656,5 @@ spec:
           limits:
             cpu: 250m
             memory: 256Mi
+
 

@@ -30,7 +30,7 @@ echo "Make sure you are logged into Docker Hub (run 'docker login' if you haven'
 sleep 2
 
 for SERVICE in "${MICROSERVICES[@]}"; do
-    IMAGE_NAME="$DOCKER_USERNAME/ecommerce:v1.0.0-$SERVICE"
+    IMAGE_NAME="$DOCKER_USERNAME/ecommerce-$SERVICE:v1.0.0"
     
     if [ -d "$SERVICE" ]; then
         echo -e "\n======================================================="
