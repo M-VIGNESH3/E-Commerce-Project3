@@ -1,0 +1,86 @@
+namespace: clahanstore
+apiGateway:
+  replicas: 2
+  image:
+    repository: team4devops/ecommerce-api-gateway
+    tag: v1.0.0
+frontendUi:
+  replicas: 2
+  image:
+    repository: team4devops/ecommerce-frontend-ui
+    tag: v1.0.0
+userService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-user-service
+    tag: v1.0.0
+authService:
+  replicas: 2
+  image:
+    repository: team4devops/ecommerce-authentication-service
+    tag: v1.0.0
+productService:
+  replicas: 2
+  image:
+    repository: team4devops/ecommerce-product-service
+    tag: v1.0.0
+searchService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-search-service
+    tag: v1.0.0
+inventoryService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-inventory-service
+    tag: v1.0.0
+cartService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-cart-service
+    tag: v1.0.0
+wishlistService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-wishlist-service
+    tag: v1.0.0
+orderService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-order-service
+    tag: v1.0.0
+paymentService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-payment-service
+    tag: v1.0.0
+invoiceService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-invoice-service
+    tag: v1.0.0
+shippingService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-shipping-service
+    tag: v1.0.0
+reviewRatingService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-review-rating-service
+    tag: v1.0.0
+recommendationService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-recommendation-service
+    tag: v1.0.0
+adminService:
+  replicas: 1
+  image:
+    repository: team4devops/ecommerce-admin-service
+    tag: v1.0.0
+mongodb:
+  replicas: 1
+  image:
+    repository: mongo
+    tag: 6.0
