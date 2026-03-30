@@ -70,8 +70,8 @@ def process_file(filepath, is_deployment):
             else:
                 values[camel_name]['replicas'] = 1
                 
-            # Extract and template image
-            image_match = re.search(r'image:\s*([^\s]+):([^\s]+)', doc)
+            # Extract and template main application image (ignoring busybox initContainer)
+            image_match = re.search(r'image:\s*(team4devops/[^\s:]+|mongo):([^\s]+)', doc)
             if image_match:
                 repo = image_match.group(1)
                 tag = image_match.group(2)
@@ -79,7 +79,8 @@ def process_file(filepath, is_deployment):
                     'repository': repo,
                     'tag': tag
                 }
-                doc = re.sub(r'image:\s*[^\s]+:[^\s]+', f'image: {{{{ .Values.{camel_name}.image.repository }}}}:{{{{ .Values.{camel_name}.image.tag }}}}', doc)
+                original_imgStr = f"image: {repo}:{tag}"
+                doc = doc.replace(original_imgStr, f'image: {{{{ .Values.{camel_name}.image.repository }}}}:{{{{ .Values.{camel_name}.image.tag }}}}')
 
         with open(os.path.join(TEMPLATES_DIR, file_name), 'w') as f:
             f.write(doc)

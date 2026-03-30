@@ -18,8 +18,8 @@ spec:
     spec:
       initContainers:
       - name: wait-for-mongodb
-        image: {{ .Values.inventoryService.image.repository }}:{{ .Values.inventoryService.image.tag }}
-        command: ['sh', '-c', 'echo "Waiting 15s for MongoDB to be ready..."; sleep 15; echo "Wait complete, starting service!"']
+        image: busybox:1.36
+        command: ['sh', '-c', 'echo "Waiting for MongoDB..."; until nc -z mongodb 27017; do sleep 2; done; echo "MongoDB is ready!"']
       containers:
       - name: inventory-service
         image: {{ .Values.inventoryService.image.repository }}:{{ .Values.inventoryService.image.tag }}
