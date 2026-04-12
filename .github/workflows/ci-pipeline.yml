@@ -122,7 +122,7 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build -t ${{ env.DOCKER_IMAGE }}:${{ steps.set_tag.outputs.TAG }} -f ecommerce-microservices/api-gateway/Dockerfile .
+          docker build -t ${{ env.DOCKER_IMAGE }}:${{ steps.set_tag.outputs.TAG }} -f ecommerce-microservices/api-gateway/Dockerfile ecommerce-microservices/api-gateway
           
       - name: Save Docker image
         run: docker save ${{ env.DOCKER_IMAGE }}:${{ steps.set_tag.outputs.TAG }} > image.tar
