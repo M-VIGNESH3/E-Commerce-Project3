@@ -52,6 +52,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies for all microservices
+        run: |
+          for dir in ecommerce-microservices/*/ ; do
+            if [ -f "$dir/package.json" ]; then
+              echo "Instaling dependencies in $dir"
+              (cd "$dir" && npm install --no-audit --no-fund)
+            fi
+          done
+      
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
