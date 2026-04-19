@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/team4devops/ecommerce-microservices.git' # The user should replace this with their actual repo URL if different
-    targetRevision: HEAD
+    repoURL: 'https://github.com/M-VIGNESH3/E-Commerce-Project.git'
+    targetRevision: feature/argo-blue-green
     path: argo-deployments
   destination:
     server: 'https://kubernetes.default.svc'
