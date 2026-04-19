@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-active-svc
+  namespace: clahanstore
+spec:
+  # This selector will be managed by the Argo Rollout Controller
+  # It will always point to the "blue" or current stable version.
+  selector:
+    app: frontend-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-preview-svc
+  namespace: clahanstore
+spec:
+  # This selector will be managed by the Argo Rollout Controller
+  # It will always point to the "green" or new preview version.
+  selector:
+    app: frontend-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

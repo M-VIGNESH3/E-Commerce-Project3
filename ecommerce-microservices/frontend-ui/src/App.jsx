@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -31,6 +31,15 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <div className="min-h-screen flex flex-col">
+            {import.meta.env.VITE_APP_ENV === 'green' ? (
+              <div className="bg-green-600 text-white text-center py-2 font-bold uppercase tracking-wider shadow-lg animate-pulse">
+                🌱 Offer Season Active! Exclusive Green Release! 🌱
+              </div>
+            ) : (
+              <div className="bg-blue-900 border-b border-blue-700 text-blue-200 text-center py-2 font-bold uppercase tracking-wider">
+                🌊 Standard Blue Release 🌊
+              </div>
+            )}
             <Navbar />
             <LoginModal />
             <main className="flex-grow">

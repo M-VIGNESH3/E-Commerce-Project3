@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ecommerce-blue-green
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/team4devops/ecommerce-microservices.git' # The user should replace this with their actual repo URL if different
+    targetRevision: HEAD
+    path: argo-deployments
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: clahanstore
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -6,6 +6,7 @@ on:
       - main
       - master
       - feature/ci-pipeline
+      - feature/argo-blue-green
     tags:
       - "v*.*.*"
   pull_request:
@@ -39,6 +40,14 @@ on:
         description: "Custom tag for the Docker image (e.g., v1.2.0)"
         required: false
         type: string
+      build_env:
+        description: "Environment to build for frontend (blue or green)"
+        required: false
+        type: choice
+        options:
+          - blue
+          - green
+
 
 jobs:
   # ---------------------------------------------------------
@@ -182,6 +191,7 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build \
+            --build-arg VITE_APP_ENV=${{ github.event.inputs.build_env || 'blue' }} \
             -t ${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}:${{ steps.set_tag.outputs.TAG }} \
             -f ecommerce-microservices/${{ matrix.service }}/Dockerfile \
             ecommerce-microservices/${{ matrix.service }}

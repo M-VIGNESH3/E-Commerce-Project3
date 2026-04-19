@@ -4,6 +4,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ARG VITE_APP_ENV=blue
+ENV VITE_APP_ENV=$VITE_APP_ENV
 RUN npm run build
 
 FROM nginx:alpine
