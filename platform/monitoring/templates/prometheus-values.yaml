@@ -19,6 +19,9 @@ data:
     # ---- Prometheus ----
     prometheus:
       enabled: true
+      service:
+        type: NodePort
+        nodePort: 30448
       prometheusSpec:
         retention: 15d
         retentionSize: "8GB"
@@ -177,6 +180,9 @@ data:
     # ---- Grafana ----
     grafana:
       enabled: true
+      service:
+        type: NodePort
+        nodePort: 32129
       adminUser: admin
       adminPassword: grafana-admin
       persistence:
