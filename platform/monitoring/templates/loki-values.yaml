@@ -20,9 +20,7 @@ data:
     loki:
       enabled: true
       persistence:
-        enabled: true
-        storageClassName: csi-standard
-        size: 10Gi
+        enabled: false
       config:
         auth_enabled: false
         server:

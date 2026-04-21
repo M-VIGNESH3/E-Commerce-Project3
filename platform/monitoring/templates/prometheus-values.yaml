@@ -32,14 +32,6 @@ data:
           limits:
             cpu: 1000m
             memory: 2Gi
-        storageSpec:
-          volumeClaimTemplate:
-            spec:
-              storageClassName: csi-standard
-              accessModes: ["ReadWriteOnce"]
-              resources:
-                requests:
-                  storage: 10Gi
         # Scrape all ServiceMonitors across all namespaces
         serviceMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelector: {}
@@ -186,9 +178,7 @@ data:
       adminUser: admin
       adminPassword: grafana-admin
       persistence:
-        enabled: true
-        storageClassName: csi-standard
-        size: 5Gi
+        enabled: false
 
       # OIDC via Keycloak
       grafana.ini:

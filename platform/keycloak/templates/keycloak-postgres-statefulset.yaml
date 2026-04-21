@@ -59,15 +59,9 @@ spec:
               command: ["pg_isready", "-U", "keycloak"]
             initialDelaySeconds: 5
             periodSeconds: 10
-  volumeClaimTemplates:
-    - metadata:
-        name: postgres-data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: {{ .Values.postgres.storage.storageClass }}
-        resources:
-          requests:
-            storage: {{ .Values.postgres.storage.size }}
+      volumes:
+        - name: postgres-data
+          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
